@@ -25,13 +25,13 @@ open class StravaStyleKit : NSObject {
 
     //// Colors
 
-    open dynamic class var logoColor: UIColor { return Cache.logoColor }
-    open dynamic class var backgroundColor: UIColor { return Cache.backgroundColor }
-    open dynamic class var shadeColor: UIColor { return Cache.shadeColor }
+    @objc open dynamic class var logoColor: UIColor { return Cache.logoColor }
+    @objc open dynamic class var backgroundColor: UIColor { return Cache.backgroundColor }
+    @objc open dynamic class var shadeColor: UIColor { return Cache.shadeColor }
 
     //// Drawing Methods
 
-    open dynamic class func drawStrava(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 95), resizing: ResizingBehavior = .aspectFit, color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) {
+    @objc open dynamic class func drawStrava(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 460, height: 95), resizing: ResizingBehavior = .aspectFit, color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -167,7 +167,7 @@ open class StravaStyleKit : NSObject {
 
     }
 
-    open dynamic class func drawTitleLogo(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) {
+    @objc open dynamic class func drawTitleLogo(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
 
@@ -181,7 +181,7 @@ open class StravaStyleKit : NSObject {
         context.restoreGState()
     }
 
-    open dynamic class func drawConnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
+    @objc open dynamic class func drawConnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
 
@@ -205,12 +205,12 @@ open class StravaStyleKit : NSObject {
         let connectTextRect = CGRect(x: 6, y: 6, width: 90, height: 21)
         let connectTextStyle = NSMutableParagraphStyle()
         connectTextStyle.alignment = .right
-        let connectTextFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: connectTextStyle]
+        let connectTextFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSAttributedStringKey.foregroundColor: color2, NSAttributedStringKey.paragraphStyle: connectTextStyle]
 
         "Connect with ".draw(in: connectTextRect, withAttributes: connectTextFontAttributes)
     }
 
-    open dynamic class func drawLogInButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
+    @objc open dynamic class func drawLogInButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
 
@@ -234,12 +234,12 @@ open class StravaStyleKit : NSObject {
         let logInTextRect = CGRect(x: 7, y: 6, width: 76, height: 21)
         let logInTextStyle = NSMutableParagraphStyle()
         logInTextStyle.alignment = .right
-        let logInTextFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: logInTextStyle]
+        let logInTextFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSAttributedStringKey.foregroundColor: color2, NSAttributedStringKey.paragraphStyle: logInTextStyle]
 
         "Log in with ".draw(in: logInTextRect, withAttributes: logInTextFontAttributes)
     }
 
-    open dynamic class func drawDisconnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
+    @objc open dynamic class func drawDisconnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
 
@@ -263,12 +263,12 @@ open class StravaStyleKit : NSObject {
         let disconnectTextRect = CGRect(x: 4, y: 5, width: 114, height: 21)
         let disconnectTextStyle = NSMutableParagraphStyle()
         disconnectTextStyle.alignment = .right
-        let disconnectTextFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: disconnectTextStyle]
+        let disconnectTextFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSAttributedStringKey.foregroundColor: color2, NSAttributedStringKey.paragraphStyle: disconnectTextStyle]
 
         "Disconnect from ".draw(in: disconnectTextRect, withAttributes: disconnectTextFontAttributes)
     }
 
-    open dynamic class func drawLogOutButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
+    @objc open dynamic class func drawLogOutButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
 
@@ -292,14 +292,14 @@ open class StravaStyleKit : NSObject {
         let logInTextRect = CGRect(x: 7, y: 6, width: 88, height: 21)
         let logInTextStyle = NSMutableParagraphStyle()
         logInTextStyle.alignment = .right
-        let logInTextFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: logInTextStyle]
+        let logInTextFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Bold", size: UIFont.systemFontSize)!, NSAttributedStringKey.foregroundColor: color2, NSAttributedStringKey.paragraphStyle: logInTextStyle]
 
         "Log out from ".draw(in: logInTextRect, withAttributes: logInTextFontAttributes)
     }
 
     //// Generated Images
 
-    open dynamic class func imageOfStrava(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) -> UIImage {
+    @objc open dynamic class func imageOfStrava(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 460, height: 95), false, 0)
             StravaStyleKit.drawStrava(color1: color1)
 
@@ -309,7 +309,7 @@ open class StravaStyleKit : NSObject {
         return imageOfStrava
     }
 
-    open dynamic class func imageOfTitleLogo(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) -> UIImage {
+    @objc open dynamic class func imageOfTitleLogo(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000)) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 150, height: 30), false, 0)
             StravaStyleKit.drawTitleLogo(color1: color1)
 
@@ -319,7 +319,7 @@ open class StravaStyleKit : NSObject {
         return imageOfTitleLogo
     }
 
-    open dynamic class func imageOfConnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
+    @objc open dynamic class func imageOfConnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 190, height: 30), false, 0)
             StravaStyleKit.drawConnectButton(color1: color1, color2: color2)
 
@@ -329,7 +329,7 @@ open class StravaStyleKit : NSObject {
         return imageOfConnectButton
     }
 
-    open dynamic class func imageOfLogInButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
+    @objc open dynamic class func imageOfLogInButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 174, height: 30), false, 0)
             StravaStyleKit.drawLogInButton(color1: color1, color2: color2)
 
@@ -339,7 +339,7 @@ open class StravaStyleKit : NSObject {
         return imageOfLogInButton
     }
 
-    open dynamic class func imageOfDisconnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
+    @objc open dynamic class func imageOfDisconnectButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 212, height: 30), false, 0)
             StravaStyleKit.drawDisconnectButton(color1: color1, color2: color2)
 
@@ -349,7 +349,7 @@ open class StravaStyleKit : NSObject {
         return imageOfDisconnectButton
     }
 
-    open dynamic class func imageOfLogOutButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
+    @objc open dynamic class func imageOfLogOutButton(color1: UIColor = UIColor(red: 0.969, green: 0.439, blue: 0.255, alpha: 1.000), color2: UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 189, height: 30), false, 0)
             StravaStyleKit.drawLogOutButton(color1: color1, color2: color2)
 

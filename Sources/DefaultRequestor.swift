@@ -164,7 +164,7 @@ internal class DefaultRequestor: Requestor {
             return
         }
 
-        let string = String(data: data, encoding: String.Encoding.utf8)
+        let string = String(data: data, encoding: String.Encoding.utf8)!
         print("Response: \(string)")
     }
 

@@ -25,7 +25,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/routes/#retreive
      */
     @discardableResult
-    public static func getRoute(_ routeId: Int, completionHandler:((_ route: Route?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    static func getRoute(_ routeId: Int, completionHandler:((_ route: Route?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = replaceId(id: routeId, in: RouteResourcePath.RouteDetail.rawValue)
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -50,7 +50,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/routes/#list
      */
     @discardableResult
-    public static func getRoutes(_ athleteId: Int, page: Page? = nil, completionHandler:((_ clubs: [Route]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    static func getRoutes(_ athleteId: Int, page: Page? = nil, completionHandler:((_ clubs: [Route]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = replaceId(id: athleteId, in: RouteResourcePath.Routes.rawValue)
         var params: ParamsDictionary? = nil
         if let page = page {

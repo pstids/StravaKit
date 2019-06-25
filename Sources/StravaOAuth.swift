@@ -50,7 +50,7 @@ public extension Strava {
     /**
      Initialize clientId, clientSecret and redirectURI.
      */
-    public static func set(clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
+    static func set(clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
         sharedInstance.redirectURI = redirectURI
@@ -73,7 +73,7 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/oauth/#get-authorize
      */
-    public static func userLogin(scope: OAuthScope, state: String = "") -> URL? {
+    static func userLogin(scope: OAuthScope, state: String = "") -> URL? {
         guard let clientId = sharedInstance.clientId,
             let _ = sharedInstance.clientSecret,
             let redirectURI = sharedInstance.redirectURI
@@ -124,7 +124,7 @@ public extension Strava {
      ```
 
      */
-    public static func openURL(_ aURL: URL, sourceApplication: String?) -> Bool {
+    static func openURL(_ aURL: URL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
             let _ = sharedInstance.clientSecret
             else {
@@ -183,7 +183,7 @@ public extension Strava {
      - Returns: task
      */
     @discardableResult
-    public static func deauthorize(_ completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    static func deauthorize(_ completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = OAuthResourcePath.Deauthorization.rawValue
 
         let task = request(.POST, authenticated: true, path: path, params: nil) { (response, error) in

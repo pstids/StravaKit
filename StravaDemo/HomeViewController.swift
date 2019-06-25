@@ -135,7 +135,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-    internal func stravaAuthorizationCompleted(_ notification: Notification?) {
+    @objc internal func stravaAuthorizationCompleted(_ notification: Notification?) {
         assert(Thread.isMainThread, "Main Thread is required")
         safariViewController?.dismiss(animated: true, completion: nil)
         safariViewController = nil

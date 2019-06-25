@@ -26,7 +26,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/activities/#get-activities
      */
     @discardableResult
-    public static func getActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    static func getActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Activities.rawValue
 
         var params: ParamsDictionary? = nil
@@ -59,7 +59,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/activities/#get-details
      */
     @discardableResult
-    public static func getActivity(_ activityId: Int, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    static func getActivity(_ activityId: Int, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = replaceId(id: activityId, in: ActivityResourcePath.Activity.rawValue)
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -84,7 +84,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/activities/#get-feed
      */
     @discardableResult
-    public static func getFollowingActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    static func getFollowingActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Following.rawValue
 
         var params: ParamsDictionary? = nil
@@ -110,7 +110,7 @@ public extension Strava {
     // MARK: - Internal Functions -
 
     internal static func handleActivitiesResponse(_ response: Any?, completionHandler: ((_ activities: [Activity]?, _ error: NSError?) -> ())?) {
-        let activities = (response as? JSONArray)?.flatMap { (d) in
+        let activities = (response as? JSONArray)?.compactMap { (d) in
             return Activity(dictionary: d)
         }
         DispatchQueue.main.async {
