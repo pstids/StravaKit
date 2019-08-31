@@ -873,7 +873,7 @@
 					};
 					26AEBF8A1D664B9500481015 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
 					26AEBF931D664B9500481015 = {
@@ -1688,7 +1688,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1713,7 +1713,7 @@
 				PRODUCT_NAME = StravaKit;
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

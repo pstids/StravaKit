@@ -55,7 +55,7 @@ public extension Strava {
         let query: [String: Any] = [
             kSecClass as String : kSecClassGenericPassword,
             kSecAttrAccount as String : StravaKeychainAccount,
-            kSecReturnData as String : kCFBooleanTrue,
+            kSecReturnData as String : kCFBooleanTrue ?? false,
             kSecMatchLimit as String : kSecMatchLimitOne
         ]
 

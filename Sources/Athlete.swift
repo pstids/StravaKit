@@ -21,7 +21,7 @@ public struct Athlete {
     public let country: String
     public let profileImageURL: URL
     public let profileMediumImageURL: URL
-    public let sex: String
+    public let sex: String?
     public let premium: Bool
 
     public let followerCount: Int?
